@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #0059acca;
+  --light-primary-color: #f3f7ff;
+  --light-gray: #f2f4f7;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  color: #80000065;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #88888886;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5555557a;
+}
+
+/*
+//////////////////////////////////////////////
+        GENERAL STYLES
+//////////////////////////////////////////////
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+a,
+button {
+  cursor: pointer;
+  background-color: none;
+  outline: none;
+  border: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.contain {
+  width: 90%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.searchBar {
+  background-color: #fafaf8;
+  padding: 1.7rem;
+  border-radius: 1.5rem;
+  border: solid 1px #99999912;
+}
+.searchBar input {
+  width: 45rem;
+  background-color: transparent;
+  font-size: 1.6rem;
+}
+.hero {
+  background-image: url("../src/assets/images/card-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5rem;
+  background-position: center;
+}
+.meal-image img {
+  border-radius: 5rem;
+  box-shadow: 2px 2px 2rem #00000034;
+}
+.category {
+  border: solid 1px #eee;
+  border-radius: 3.5rem;
+  background-color: #fdfdfc;
+  transition: all 0.5s ease-in-out;
+}
+.category:hover {
+  border-color: #46c286;
+  background-color: #f3fbf7;
+}
+.category.active {
+  border-color: #46c286;
+  background-color: #f3fbf7;
+}
