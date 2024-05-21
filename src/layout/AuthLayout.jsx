@@ -4,8 +4,8 @@ import img from '../assets/images/bg-auth.jpeg'
 const AuthLayout = () => {
     return (
         <>
-            <main className="main h-screen relative flex">
-                <div className="flex-1">
+            <main className="main md:h-screen h-full relative flex flexCol">
+                <div className="flex-1 mb3">
                     <img src={img} alt="Food Background Image" className='w-full h-full' />
                 </div>
                 <div className="flex-1">
