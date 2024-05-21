@@ -2,14 +2,16 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../services/AuthApi";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { RenderErrorMessage, RenderSuccessMessage, SetToStorage } from "../../helpers";
+import { RenderErrorMessage, RenderSuccessMessage } from "../../helpers";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { useProtectedRoutesContext } from "../../context/ProtectedRouteContext";
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
+  const { setUser, setToken } = useProtectedRoutesContext();
 
   const queryClient = useQueryClient();
 
@@ -22,7 +24,8 @@ const Login = () => {
     mutationFn: loginUser,
     onSuccess: async (data) => {
       queryClient.invalidateQueries({ queryKey: ['register'] })
-      SetToStorage('user', data.data)
+      setUser(data.data);
+      setToken(data.access_token);
       RenderSuccessMessage(data.message);
       navigate('/');
     },

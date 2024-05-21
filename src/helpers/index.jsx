@@ -17,13 +17,13 @@ export function If({ condition, children }) {
 }
 
 export const SetToStorage = (key, value) => {
-    let storedValue = JSON.stringify(value);
+    let storedValue = JSON?.stringify(value);
     localStorage.setItem(key, storedValue);
 };
 
 export const GetFromStorage = (key) => {
     let value = localStorage.getItem(key);
-    return value ? JSON.parse(value) : null;
+    return value ? JSON?.parse(value) : null;
 };
 
 export const NavigateTo = (link) => {

@@ -67,7 +67,9 @@ const Header = () => {
                         <h2 className="text-2xl">{user?.name}</h2>
                     </div>
                     <button type="button" className="text-3xl hover:underline" onClick={() => {
+                        setToken(null);
                         setUser(null);
+                        navigate('/auth/login');
                     }}>Log Out</button>
                 </div>
             </div>
