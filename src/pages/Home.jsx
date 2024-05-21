@@ -2,16 +2,16 @@
 
 import img from '../assets/images/hero.png'
 import { useQuery } from "@tanstack/react-query";
-import { getMealsByCategories } from "../services";
-import { If } from "../helpers";
-import Meal from "../components/Meals";
+import { getMealsByCategory } from "../services";
+import { If, NavigateTo } from "../helpers";
+import { Meal, MealSkeleton } from '../components';
 
 const Home = () => {
   const category = 'Miscellaneous'
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['categories', category],
-    queryFn: () => getMealsByCategories(category)
+    queryFn: () => getMealsByCategory(category)
   })
 
   const meals = data?.data?.meals
@@ -29,18 +29,27 @@ const Home = () => {
       <section className="meals contain py-40">
         <div className="flex items-center justify-between mb-24">
           <h1 className="text-6xl font-semibold">Popular Meals</h1>
-          <button className="bg-[#fec330] py-5 p-10 text-2xl rounded-full">View More</button>
+          <button className="bg-[#fec330] py-5 p-10 text-2xl rounded-full cursor-pointer" onClick={NavigateTo('/meals')}>View More</button>
         </div>
 
         <div className="flex flex-wrap gap-20">
+          <If condition={isLoading}>
+            <MealSkeleton cards={12} />
+          </If>
           <If condition={meals?.length > 1}>
             {meals?.map(el => (
               <Meal
                 key={el?.idMeal}
                 image={el?.strMealThumb}
                 text={el?.strMeal}
+                id={el?.idMeal}
               />
             ))}
+          </If>
+          <If condition={!meals || meals?.length < 0}>
+            <div className="flex flex-col items-center justify-center w-full">
+              <p className="text-3xl font-semibold mb-7">No meals here</p>
+            </div>
           </If>
         </div>
       </section>

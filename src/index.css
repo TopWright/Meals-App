@@ -13,6 +13,7 @@
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 2px;
 }
 
 /* Track */
@@ -57,7 +58,8 @@ textarea {
   outline: none;
 }
 a,
-button {
+button,
+select {
   cursor: pointer;
   background-color: none;
   outline: none;
@@ -99,11 +101,17 @@ body {
   border-radius: 5rem;
   box-shadow: 2px 2px 2rem #00000034;
 }
+.meal-image span {
+  border-radius: 4rem;
+}
 .category {
   border: solid 1px #eee;
   border-radius: 3.5rem;
   background-color: #fdfdfc;
   transition: all 0.5s ease-in-out;
+}
+.category span {
+  border-radius: 1rem;
 }
 .category:hover {
   border-color: #46c286;
@@ -112,4 +120,13 @@ body {
 .category.active {
   border-color: #46c286;
   background-color: #f3fbf7;
+}
+.detail img {
+  border-radius: 7rem;
+  box-shadow: 2px 2px 2rem #00000034;
+  outline: solid 1px #9999998f;
+  outline-offset: 2rem;
+}
+.detail span {
+  border-radius: 7rem;
 }
