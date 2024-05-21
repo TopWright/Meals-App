@@ -1,0 +1,33 @@
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 55%;
+  }
+  .flexCol {
+    flex-direction: column;
+  }
+  .wFull {
+    width: 100%;
+  }
+  .searchBar {
+    padding: 1.2rem;
+  }
+  .searchBar input {
+    width: 35rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+  .flexCol2 {
+    flex-direction: column;
+  }
+  .mb3 {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .flexCol3 {
+    flex-direction: column;
+  }
+}

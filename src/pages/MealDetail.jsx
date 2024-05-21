@@ -30,7 +30,7 @@ const MealDetail = () => {
       </div>
 
 
-      <div className="flex gap-32">
+      <div className="flex gap-32 flexCol">
         <div className="detail flex-1">
           <img src={detail?.strMealThumb} alt={detail?.strMeal} className="w-full" />
         </div>

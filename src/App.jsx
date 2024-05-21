@@ -1,14 +1,35 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Favourites, Home, MealDetail } from "./pages";
-import MainLayout from "./layout";
-import Meals from "./pages/Meals";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Favourites, Home, Login, MealDetail, Meals, NotFound, Register } from "./pages";
+import { AuthLayout, MainLayout } from "./layout";
+import { useProtectedRoutesContext } from "./context/ProtectedRouteContext";
+import { GetFromStorage } from "./helpers";
+
+const isAuthenticated = (user) => {
+  return user || GetFromStorage('token');
+};
 
 function App() {
+  const { user } = useProtectedRoutesContext();
 
   const router = createBrowserRouter([
     {
+      path: "/auth",
+      element: <AuthLayout />,
+      // errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "login",
+          element: <Login />,
+        },
+        {
+          path: "register",
+          element: <Register />,
+        },
+      ],
+    },
+    {
       path: "/",
-      element: <MainLayout />,
+      element: isAuthenticated(user) ? <MainLayout /> : <Navigate to="/auth/login" />,
       // errorElement: <ErrorPage />,
       children: [
         {
@@ -27,12 +48,12 @@ function App() {
           path: "favourites",
           element: <Favourites />,
         },
-        // {
-        //   path: "profile",
-        //   element: <Profile />,
-        // },
       ],
     },
+    {
+      path: '*',
+      element: <NotFound />
+    }
   ]);
 
   return <RouterProvider router={router} />;

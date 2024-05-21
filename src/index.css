@@ -70,6 +70,32 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.btn-primary:disabled::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid;
+  border-top-color: white !important;
+  -webkit-animation: loader 0.8s linear infinite;
+  animation: loader 0.8s linear infinite;
+}
+.btn-primary:disabled {
+  position: relative;
+  color: #fec330 !important;
+}
+.disabled {
+  background-color: #fec330 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -106,7 +132,7 @@ body {
 }
 .category {
   border: solid 1px #eee;
-  border-radius: 3.5rem;
+  border-radius: 3rem;
   background-color: #fdfdfc;
   transition: all 0.5s ease-in-out;
 }
@@ -129,4 +155,59 @@ body {
 }
 .detail span {
   border-radius: 7rem;
+}
+.custom-popup-title {
+  font-size: 1.7rem !important;
+}
+
+.form {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 2rem #00000034;
+  border-radius: 1.5rem;
+  padding: 5rem 7rem;
+  padding-top: 7rem;
+}
+
+.form div label {
+  display: inline-block;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+.form div input {
+  display: block;
+  font-size: 1.7rem;
+  margin-bottom: 4rem;
+  border: solid 1px #d7d7d7;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1rem #0000000f;
+  width: 100%;
+}
+
+.form button {
+  background-color: #fec330;
+  font-size: 2rem;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 4rem;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.view-pwd {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

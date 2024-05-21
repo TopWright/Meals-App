@@ -11,7 +11,7 @@ const Category = ({
 
     return (
         <button
-            className={`category flex flex-col items-center justify-between p-10 cursor-pointer ${isSelected ? 'active' : ''}`}
+            className={`category flex flex-col items-center justify-between p-7 cursor-pointer ${isSelected ? 'active' : ''}`}
             onClick={() => {
                 setSelectedCategory(text);
                 setSelectedArea('');

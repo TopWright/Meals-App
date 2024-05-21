@@ -18,10 +18,10 @@ const Home = () => {
 
   return (
     <>
-      <section className="hero contain flex items-center justify-between px-32 py-10">
+      <section className="hero contain flex items-center justify-between sm:px-32 px-10 md:py-10 py-32 flexCol">
         <div className="">
           <h1 className="text-7xl font-semibold mb-5">Let's find your ramen!</h1>
-          <p className="text-3xl w-[70%] leading-relaxed">pasta, Creamy pork soup, spring onions, spicy chicken and many more delicious meals available for you...</p>
+          <p className="text-3xl w-[70%] wFull leading-relaxed">Pasta, Creamy pork soup, spring onions, spicy chicken and many more delicious meals available for you...</p>
         </div>
         <img src={img} alt="" />
       </section>

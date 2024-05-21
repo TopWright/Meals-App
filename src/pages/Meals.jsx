@@ -118,9 +118,9 @@ const Meals = () => {
             </div>
 
             <section className="meals contain py-52">
-                <div className="flex items-center justify-between mb-24">
-                    <h1 className="text-6xl font-semibold">Meals For You</h1>
-                    <div className="flex gap-10">
+                <div className="flex items-center justify-between mb-24 flexCol2">
+                    <h1 className="text-6xl font-semibold mb3">Meals For You</h1>
+                    <div className="flex gap-10 flexCol3">
                         <Select
                             title="Filter By Area"
                             name="area"

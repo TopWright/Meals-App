@@ -1,15 +1,9 @@
-import Header from './Header'
-import { Outlet } from 'react-router-dom'
+import Header from "./Header";
+import MainLayout from "./MainLayout";
+import AuthLayout from "./AuthLayout";
 
-export const MainLayout = () => {
-    return (
-        <>
-            <Header />
-            <main className="main relative">
-                <Outlet />
-            </main>
-        </>
-    )
+export {
+    Header,
+    MainLayout,
+    AuthLayout,
 }
-
-export default MainLayout
