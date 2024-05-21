@@ -68,7 +68,6 @@ const Header = () => {
                     </div>
                     <button type="button" className="text-3xl hover:underline" onClick={() => {
                         setUser(null);
-                        localStorage.clear();
                     }}>Log Out</button>
                 </div>
             </div>
