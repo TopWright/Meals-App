@@ -1,15 +1,15 @@
-import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Favourites, Home, Login, MealDetail, Meals, NotFound, Register } from "./pages";
 import { AuthLayout, MainLayout } from "./layout";
-import { useProtectedRoutesContext } from "./context/ProtectedRouteContext";
-import { GetFromStorage } from "./helpers";
+// import { useProtectedRoutesContext } from "./context/ProtectedRouteContext";
+// import { GetFromStorage } from "./helpers";
 
-const isAuthenticated = (user) => {
-  return user || GetFromStorage('token');
-};
+// const isAuthenticated = (user) => {
+//   return user || GetFromStorage('token');
+// };
 
 function App() {
-  const { user } = useProtectedRoutesContext();
+  // const { user } = useProtectedRoutesContext();
 
   const router = createBrowserRouter([
     {
@@ -29,7 +29,7 @@ function App() {
     },
     {
       path: "/",
-      element: isAuthenticated(user) ? <MainLayout /> : <Navigate to="/auth/login" />,
+      element: <MainLayout />,
       // errorElement: <ErrorPage />,
       children: [
         {
